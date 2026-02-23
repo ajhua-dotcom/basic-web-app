@@ -17,6 +17,13 @@ describe("QueryProcessor", () => {
             "writer in the English language and the world's pre-eminent dramatist."
           ));
     });
+    test('should return andrew id', () => {
+        const query = "andrew id";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "Andrew ID is ajhua"
+          ));
+    });
 
     test('should return name', () => {
         const query = "What is your name?";
