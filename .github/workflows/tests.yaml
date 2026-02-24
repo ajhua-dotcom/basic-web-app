@@ -1,0 +1,27 @@
+name: __BLANK 1__
+
+on:
+
+push:
+
+branches:
+
+- main
+
+jobs:
+
+build:
+
+    runs-on: ubuntu-latest
+
+    name: ESLint and Jest 
+
+    steps:
+
+    - uses: actions/checkout@v3
+
+    - uses: bahmutov/npm-install@v1
+
+    - run: npm run lint (Run ESLint)
+
+    - run: npm run test (Run Jest)

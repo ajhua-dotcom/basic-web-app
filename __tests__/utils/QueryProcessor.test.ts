@@ -18,10 +18,10 @@ describe("QueryProcessor", () => {
           ));
     });
     test('should return andrew id', () => {
-        const query = "andrew id";
+        const query = "andrewid";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
-            "Andrew ID is ajhua"
+            "ajhua"
           ));
     });
 
