@@ -76,6 +76,17 @@ function isPrime(num = 0) {
     }
     return "error";
   }
+  if (query.toLowerCase().includes("plus")){
+    const numbersArray =  query.match(/\d+\.?\d*/g);
+    let total = 0;
+    if (numbersArray != null){
+      for(let elem in numbersArray){
+        total += Number(elem);
+      }
+      return total.toString();
+    }
+    return "";
+  }
   if (query.toLowerCase().includes("square") && query.toLowerCase().includes("cube")){
 
   }
