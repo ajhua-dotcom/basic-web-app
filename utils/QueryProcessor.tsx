@@ -9,11 +9,11 @@ export default function QueryProcessor(query: string): string {
 
   if (query.toLowerCase().includes("andrewid")) {
     return (
-      "ajhua"
+      "ajhua_"
     );
   }
   if (query.toLowerCase().includes("name")) {
-    return "Rohan";
+    return "Andrew";
   }
 
   return "";
