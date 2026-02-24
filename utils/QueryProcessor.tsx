@@ -15,13 +15,19 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("name")) {
     return "ajhua";
   }
-  // if (query.toLowerCase().includes("largest")){
-  //   const numbersArray = query.match(/\d+\.?\d*/g); 
-  //   let max = 0
-  //   if (numbersArray != null){
-
-  //   }
-  // }
+  if (query.toLowerCase().includes("largest")){
+    const numbersArray = query.match(/\d+\.?\d*/g); 
+    let largest = 0
+    if (numbersArray != null){
+      for(let elem in numbersArray){
+        if (Number(elem) > largest){
+          largest = Number(elem);
+        }
+      }
+      return largest.toString();
+    }
+    return "";
+  }
   // if(query.toLowerCase().includes("plus")){
 
   // }
