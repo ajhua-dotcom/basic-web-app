@@ -29,8 +29,22 @@ function isPrime(num = 0) {
       }
     }
 
-    return true; // No divisors found, the number is prime.
+  return true; // No divisors found, the number is prime.
+}
+function bigIntPow(base: bigint, exponent: bigint): bigint {
+  let result = BigInt(1);
+
+  while (exponent > BigInt(0)) {
+    if (exponent % BigInt(2) === BigInt(1)) {
+      result = result * base;
+    }
+    base = base * base;
+    exponent = exponent / BigInt(2);
   }
+
+  return result;
+}
+
   if (query.toLowerCase().includes("andrewid")) {
     return (
       "ajhua"
@@ -69,13 +83,19 @@ function isPrime(num = 0) {
     }
     return "error";
   }
-  if (query.toLowerCase().includes("to the power of")){
-    const numbersArray =  query.match(/\d+\.?\d*/g);
-    if (numbersArray != null){
-      return (Math.pow(Number(numbersArray[0]), Number(numbersArray[1]))).toString();
+  if (query.toLowerCase().includes("to the power of")) {
+    const numbersArray = query.match(/\d+/g);
+
+    if (numbersArray && numbersArray.length >= 2) {
+      const base = BigInt(numbersArray[0]);
+      const exponent = BigInt(numbersArray[1]);
+
+      return bigIntPow(base, exponent).toString();
     }
+
     return "error";
   }
+
   if (query.toLowerCase().includes("plus")){
     const numbersArray =  query.match(/\d+\.?\d*/g);
     let total = 0;
