@@ -78,10 +78,10 @@ function isPrime(num = 0) {
     if (numbersArray != null){
       for(let elem in numbersArray){
         if (isPrime(Number(elem))){
-          res += " " + elem
+          res += elem + ", "
         }
       }
-      return res;
+      return res.substring(-2);
     }
     return "";
 
