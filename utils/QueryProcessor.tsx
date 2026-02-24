@@ -69,6 +69,13 @@ function isPrime(num = 0) {
     }
     return "error";
   }
+  if (query.toLowerCase().includes("to the power of")){
+    const numbersArray =  query.match(/\d+\.?\d*/g);
+    if (numbersArray != null){
+      return (Math.pow(Number(numbersArray[0]), Number(numbersArray[1]))).toString();
+    }
+    return "error";
+  }
   if (query.toLowerCase().includes("square") && query.toLowerCase().includes("cube")){
 
   }
