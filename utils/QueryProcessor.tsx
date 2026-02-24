@@ -13,7 +13,24 @@ export default function QueryProcessor(query: string): string {
     );
   }
   if (query.toLowerCase().includes("name")) {
-    return "Andrew";
+    return "ajhua";
+  }
+  // if (query.toLowerCase().includes("largest")){
+  //   const numbersArray = query.match(/\d+\.?\d*/g); 
+  //   let max = 0
+  //   if (numbersArray != null){
+
+  //   }
+  // }
+  // if(query.toLowerCase().includes("plus")){
+
+  // }
+  if (query.toLowerCase().includes("multiplied")){
+    const numbersArray =  query.match(/\d+\.?\d*/g);
+    if (numbersArray != null){
+      return (Number(numbersArray[0]) * Number(numbersArray[1])).toString();
+    }
+    return "error";
   }
 
   return "";
